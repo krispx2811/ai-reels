@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="250" viewBox="0 0 1280 250" role="img" aria-label="Every reel: hook in 1.5 seconds, rehook at 40 percent, payoff, end card">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0B0A12"/><stop offset="1" stop-color="#16112A"/></linearGradient>
+    <linearGradient id="track" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF5A1F"/><stop offset="0.4" stop-color="#FFD23F"/><stop offset="0.75" stop-color="#2BD9FE"/><stop offset="1" stop-color="#7B5CFF"/>
+    </linearGradient>
+    <style>
+      .t { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+      .play { animation: m 5s cubic-bezier(.65,0,.35,1) infinite; }
+      @keyframes m { 0% { transform: translateX(0) } 92%,100% { transform: translateX(1080px) } }
+    </style>
+  </defs>
+  <rect width="1280" height="250" rx="24" fill="url(#bg)"/>
+  <g class="t">
+    <text x="100" y="54" font-size="14" font-weight="700" fill="#FFFFFF" fill-opacity="0.45" letter-spacing="2">THE SPINE OF EVERY REEL</text>
+    <rect x="100" y="104" width="1080" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.08"/>
+    <rect x="100" y="104" width="1080" height="10" rx="5" fill="url(#track)"/>
+    <g class="play"><circle cx="100" cy="109" r="9" fill="#fff"/></g>
+
+    <g transform="translate(100 0)">
+      <circle cx="0" cy="109" r="16" fill="#0B0A12" stroke="#FF5A1F" stroke-width="4"/>
+      <text x="0" y="168" font-size="22" font-weight="900" fill="#fff" text-anchor="start">HOOK</text>
+      <text x="0" y="196" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55">first 1.5 s · a question</text>
+      <text x="0" y="216" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55">or a shock line</text>
+    </g>
+    <g transform="translate(532 0)">
+      <circle cx="0" cy="109" r="16" fill="#0B0A12" stroke="#FFD23F" stroke-width="4"/>
+      <text x="0" y="168" font-size="22" font-weight="900" fill="#fff" text-anchor="middle">REHOOK</text>
+      <text x="0" y="196" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="middle">~40% · twist, countdown,</text>
+      <text x="0" y="216" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="middle">chapter card, phone buzz</text>
+    </g>
+    <g transform="translate(910 0)">
+      <circle cx="0" cy="109" r="16" fill="#0B0A12" stroke="#2BD9FE" stroke-width="4"/>
+      <text x="0" y="168" font-size="22" font-weight="900" fill="#fff" text-anchor="middle">PAYOFF</text>
+      <text x="0" y="196" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="middle">the product shown,</text>
+      <text x="0" y="216" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="middle">with real screens</text>
+    </g>
+    <g transform="translate(1180 0)">
+      <circle cx="0" cy="109" r="16" fill="#0B0A12" stroke="#7B5CFF" stroke-width="4"/>
+      <text x="0" y="168" font-size="22" font-weight="900" fill="#fff" text-anchor="end">END CARD</text>
+      <text x="0" y="196" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="end">“Comment A or B”</text>
+      <text x="0" y="216" font-size="15" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" text-anchor="end">or CTA + logo</text>
+    </g>
+  </g>
+</svg>
