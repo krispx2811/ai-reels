@@ -31,22 +31,14 @@
 
 <div align="center">
 
-Real reels, rendered on one PC with this skill: no stock footage, no AI video models, Arabic voiceover by ElevenLabs.
-
 <table>
 <tr>
-<td align="center" width="33%"><img src=".github/assets/demo-toon-threejs.gif" width="240" alt="Toon POV story rendered in three.js: a shop owner pulls up the shutter, shop signs flip by"/></td>
-<td align="center" width="33%"><img src=".github/assets/demo-toon-blender.gif" width="240" alt="Toon POV story rendered in Blender: 30 days hook, shopfronts and a customer at the counter"/></td>
-<td align="center" width="33%"><img src=".github/assets/demo-vector.gif" width="240" alt="Flat vector motion comic: end card with a comment box typing the keyword"/></td>
-</tr>
-<tr>
-<td align="center"><b>Toon POV story</b><br/><sub>format 1 × style S7 · three.js</sub></td>
-<td align="center"><b>Toon POV story</b><br/><sub>format 1 × style S7 · Blender + RTX GPU</sub></td>
-<td align="center"><b>Comment-keyword CTA</b><br/><sub>format 4 × style S8 · flat vector</sub></td>
+<td align="center" width="25%"><img src=".github/assets/demo-diorama.gif" width="200" alt="Clay miniature diorama rendered in Blender: a tiny street, wallet cards and chat bubbles above the shops, a light ripple down the road"/></td>
+<td align="center" width="25%"><img src=".github/assets/demo-toon-threejs.gif" width="200" alt="Toon 3D rendered in three.js: a customer walks into a café across the street"/></td>
+<td align="center" width="25%"><img src=".github/assets/demo-toon-blender.gif" width="200" alt="Toon 3D rendered in Blender: shopfronts, a customer at the counter and a phone lock screen"/></td>
+<td align="center" width="25%"><img src=".github/assets/demo-vector.gif" width="200" alt="Flat vector motion comic: a rainy café window and a phone scanning a loyalty card"/></td>
 </tr>
 </table>
-
-<sub>36-second Arabic reels with hook, rehook, chapter cards, HUD counters and real app screens. Previews are cropped loops.</sub>
 
 </div>
 
