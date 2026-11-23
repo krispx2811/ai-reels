@@ -1,0 +1,7 @@
+﻿out/
+stills/
+.env
+*.mp4
+__pycache__/
+node_modules/
+
