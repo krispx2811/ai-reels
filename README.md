@@ -27,6 +27,31 @@
 
 ---
 
+## 🎥 Made with AI Reels
+
+<div align="center">
+
+Real reels, rendered on one PC with this skill: no stock footage, no AI video models, Arabic voiceover by ElevenLabs.
+
+<table>
+<tr>
+<td align="center" width="33%"><img src=".github/assets/demo-toon-threejs.gif" width="240" alt="Toon POV story rendered in three.js: a shop owner pulls up the shutter, shop signs flip by"/></td>
+<td align="center" width="33%"><img src=".github/assets/demo-toon-blender.gif" width="240" alt="Toon POV story rendered in Blender: 30 days hook, shopfronts and a customer at the counter"/></td>
+<td align="center" width="33%"><img src=".github/assets/demo-vector.gif" width="240" alt="Flat vector motion comic: end card with a comment box typing the keyword"/></td>
+</tr>
+<tr>
+<td align="center"><b>Toon POV story</b><br/><sub>format 1 × style S7 · three.js</sub></td>
+<td align="center"><b>Toon POV story</b><br/><sub>format 1 × style S7 · Blender + RTX GPU</sub></td>
+<td align="center"><b>Comment-keyword CTA</b><br/><sub>format 4 × style S8 · flat vector</sub></td>
+</tr>
+</table>
+
+<sub>36-second Arabic reels with hook, rehook, chapter cards, HUD counters and real app screens. Previews are cropped loops.</sub>
+
+</div>
+
+---
+
 ## ⚡ Install in 10 seconds
 
 ```bash
@@ -197,6 +222,29 @@ The skill is MIT licensed. The tools it uses are free; voiceover needs your own 
 **How is it different from Remotion or After Effects templates?**
 It is a format playbook for an AI agent: the agent picks a proven viral structure, writes the script, builds the scene and
 checks the pacing from real pixels, end to end.
+
+---
+
+## 🧪 Mix and match
+
+| Prompt | Format | Style |
+|---|---|---|
+| "a café owner sees his regular walk into the shop next door" | 1. Toon POV story | S4 Neon Gulf night |
+| "show 3 features of my app on a phone" | 8. Product hero film | S5 Keynote product |
+| "a street where only one shop's customers come back" | 9. Tiny world diorama | S6 Clay diorama |
+| "Ramadan offer reel" | 10. 3D kinetic type | S1 Gulf heritage |
+| "how it works in 3 steps" | 7. Dialogue explainer | S11 Hand-drawn sketch |
+| "a satisfying loop of stamps filling a card" | 12. Satisfying physics | S2 Claymation |
+
+---
+
+## ⭐ Star history
+
+<div align="center">
+<a href="https://star-history.com/#krispx2811/ai-reels&Date">
+<img src="https://api.star-history.com/svg?repos=krispx2811/ai-reels&type=Date&theme=dark" alt="AI Reels star history" width="640"/>
+</a>
+</div>
 
 ---
 
