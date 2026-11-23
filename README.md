@@ -181,15 +181,38 @@ a 3D product hero film of my app on a phone, three feature callouts, logo at the
 
 ---
 
-## 📦 Requirements
+## 🖥 System requirements
 
-| Tool | Needed for |
+<table>
+<tr>
+<th></th>
+<th>🟢 Minimum<br/><sub>three.js and 2D styles</sub></th>
+<th>🔥 Recommended<br/><sub>everything, incl. Blender + voice check</sub></th>
+</tr>
+<tr><td><b>OS</b></td><td>Windows 10/11, macOS 12+, Linux</td><td>Same</td></tr>
+<tr><td><b>CPU</b></td><td>4 cores</td><td>8+ cores (final HD encodes use every core)</td></tr>
+<tr><td><b>RAM</b></td><td>8 GB</td><td>16 GB (32 GB comfortable)</td></tr>
+<tr><td><b>GPU</b></td><td>Any GPU with WebGL 2 (integrated is fine)</td><td>NVIDIA RTX 3060 / 3070 or better, 8 GB VRAM</td></tr>
+<tr><td><b>Disk</b></td><td>5 GB free</td><td>20 GB free on an SSD (raw frames are ~2.7 GB per 50 s HD video)</td></tr>
+</table>
+
+**Measured on an RTX 3070 Ti (8 GB):** a 36 s toon Blender reel rendered in ~9 min (draft), a 50 s HD clay diorama in
+~36 min at 3.4 GB VRAM and 99% GPU; three.js and vector reels take 3 to 5 min. Without a dedicated GPU, Blender falls
+back to the CPU and is 5 to 10x slower, so stick to the three.js styles.
+
+| Software (all free) | Needed for |
 |---|---|
-| Node 22+ | HyperFrames rendering (`npx hyperframes`) |
-| Python 3 | Pacing and loop checks |
-| ffmpeg | Encoding, frame checks |
-| Blender 4.2+ with a GPU *(optional)* | Blender-rendered 3D formats |
-| ElevenLabs API key *(optional)* | Voiceover |
+| Node 22+ | HyperFrames rendering (`npx hyperframes`, downloads its own headless Chrome) |
+| Python 3.10+ | Pacing, loop and voice scripts |
+| ffmpeg | Encoding and frame checks |
+| Blender 4.2+ *(optional)* | Blender styles (S1 to S4, S6, S11, S13) |
+| faster-whisper *(optional)* | Arabic pronunciation check (downloads a 1.6 GB model once) |
+| Internet | Fonts and libraries load from CDNs during renders; voice uses the ElevenLabs API |
+
+| Account | Needed for |
+|---|---|
+| ElevenLabs API key *(optional)* | Voiceover. Needs the *text to speech* permission; *voices read* lets you browse your voice library |
+| Nothing else | No paid render services, no AI video credits |
 
 ---
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: ai-reels
 description: Catalogue of 15 short-form vertical video formats (Reels / TikTok / Shorts) and 14 visual styles (Gulf heritage, claymation, papercraft, neon night, Apple-keynote product, clay diorama, toon outlines, flat vector, isometric, pixel art, sketch, risograph, vinyl toy, kinetic 3D type): 7 story formats studied from real viral reels and 8 3D showcase formats from the threejs.org gallery (product hero, tiny world diorama, 3D kinetic type, particle globe, satisfying physics, chase cam, glass/liquid, cozy room), with how to build each one locally in Blender or three.js for free (HyperFrames, three.js, Blender + Kenney CC0 kits, ElevenLabs voice), without AI video models. Use when the user wants a reel, short, TikTok, story ad, POV video, "what if" video, choose-your-path / "comment A or B" video, Roblox-style story, motion comic, or cartoon explainer, or asks "what kinds of videos can you make", or shares an Instagram/TikTok reel as a style reference.
 ---
@@ -86,6 +86,18 @@ Palettes, materials, light, camera, motion, type and the Blender/three.js recipe
 - Use REAL assets of the product (screens, logo, mascot) whenever a phone or sign appears.
 - Never use AI video models (Kling, Seedance, Wan, Higgsfield video, etc.) unless the user asks for them. Everything here is built and rendered locally.
 
+## System requirements
+
+| | Minimum (three.js and 2D styles) | Recommended (everything, incl. Blender + voice check) |
+|---|---|---|
+| CPU | 4 cores | 8+ cores |
+| RAM | 8 GB | 16 GB (32 GB comfortable) |
+| GPU | any WebGL 2 GPU | NVIDIA RTX 3060/3070+, 8 GB VRAM |
+| Disk | 5 GB free | 20 GB free SSD (raw frames ~2.7 GB per 50 s HD video) |
+
+Measured on an RTX 3070 Ti: 36 s toon Blender reel ~9 min (draft); 50 s HD clay diorama ~36 min (3.4 GB VRAM, 99% GPU);
+three.js/vector reels 3 to 5 min. Without a dedicated GPU, Blender is 5 to 10x slower: prefer three.js styles.
+Before a long Blender render, tell the user the expected time. Render a low-res preview first.
 ## Toolkit
 
 Needs Node 22+, Python 3, ffmpeg; Blender 4.2+ with a GPU for the Blender styles.
