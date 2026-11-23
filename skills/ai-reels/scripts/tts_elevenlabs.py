@@ -55,13 +55,33 @@ def main():
             labels = v.get('labels') or {}
             print(f"{v['voice_id']}  {v['name'][:40]:40}  {labels.get('language', '')} {labels.get('accent', '')} {labels.get('gender', '')}")
     elif cmd == 'lines':
-        if not cfg['voice_id']:
-            sys.exit('Set voice_id in vo.json first (python tts.py voices arabic).')
+        voices = cfg.get('voices') or {}
+        def voice_for(ln):
+            return voices.get(ln.get('speaker', ''), '') or cfg.get('voice_id', '')
+        missing = [ln['id'] for ln in cfg['lines'] if not voice_for(ln)]
+        if missing:
+            sys.exit('Set a voice id in vo.json "voices" (or "voice_id") for: ' + ', '.join(missing))
         os.makedirs(os.path.join(HERE, 'lines'), exist_ok=True)
-        for ln in cfg['lines']:
+        only = sys.argv[2:]                      # optional: regenerate only these line ids
+        lines = cfg['lines']
+        for k, ln in enumerate(lines):
+            if only and ln['id'] not in only:
+                continue
             out = os.path.join(HERE, 'lines', ln['id'] + '.mp3')
-            body = {'text': ln['text'], 'model_id': cfg['model_id'], 'language_code': 'ar'}
-            audio = call('POST', f"/v1/text-to-speech/{cfg['voice_id']}?output_format=mp3_44100_128", body, raw=True)
+            body = {'text': ln['text'], 'model_id': cfg['model_id'], 'language_code': cfg.get('language_code', 'ar'),
+                    'apply_text_normalization': 'on'}
+            # eleven_v4: only stability + similarity_boost work (no speed/style); pacing comes from punctuation
+            vs = cfg.get('voice_settings')
+            if vs:
+                body['voice_settings'] = vs
+            # request stitching: same speaker's neighbouring lines, so the read flows as one performance
+            prev = [l for l in lines[:k] if l.get('speaker') == ln.get('speaker')]
+            nxt = [l for l in lines[k + 1:] if l.get('speaker') == ln.get('speaker')]
+            if prev:
+                body['previous_text'] = prev[-1]['text']
+            if nxt:
+                body['next_text'] = nxt[0]['text']
+            audio = call('POST', f"/v1/text-to-speech/{voice_for(ln)}?output_format=mp3_44100_128", body, raw=True)
             open(out, 'wb').write(audio)
             d = dur(out)
             flag = 'OK' if d <= ln['slot'] else f'TOO LONG by {d - ln["slot"]:.2f} s'
@@ -73,8 +93,9 @@ def main():
             p = os.path.join(HERE, 'lines', ln['id'] + '.mp3')
             ins += ['-i', p]
             d = dur(p)
-            speed = max(1.0, d / ln['slot'])            # only ever speed up, at most a touch
-            f = f"[{i}:a]" + (f"atempo={min(speed, 1.15):.3f}," if speed > 1.0 else '') + f"adelay={int(ln['at'] * 1000)}:all=1[a{i}]"
+            speed = max(cfg.get('tempo', 1.0), d / ln['slot'])   # base tempo, a touch more if the line is long
+            speed = min(speed, 1.18)
+            f = f"[{i}:a]" + (f"atempo={speed:.3f}," if speed > 1.0 else '') + f"adelay={int(ln['at'] * 1000)}:all=1[a{i}]"
             flt.append(f)
         n = len(cfg['lines'])
         flt.append(''.join(f'[a{i}]' for i in range(1, n + 1)) + f'amix=inputs={n}:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=7,apad[vo]')

@@ -5,10 +5,11 @@
 # AI Reels: make viral Reels, TikToks and Shorts with Claude Code
 
 **The Claude Code skill that turns one prompt into a scroll-stopping vertical video, built in code and rendered on your own machine.**
-15 proven short-form formats · hook in 1.5 s · 3D with three.js and Blender · Arabic and English · no AI video models
+15 proven formats × 14 styles · hook in 1.5 s · 3D with three.js and Blender · Arabic and English · no AI video models
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-FF5A1F?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.claude.com/en/docs/claude-code/skills)
 [![Formats](https://img.shields.io/badge/formats-15-7B5CFF?style=for-the-badge)](#-the-15-formats)
+[![Styles](https://img.shields.io/badge/styles-14-FF2E88?style=for-the-badge)](#-the-14-styles)
 [![No AI video models](https://img.shields.io/badge/AI_video_models-0-2BD9FE?style=for-the-badge)](#-why-ai-reels)
 [![License: MIT](https://img.shields.io/badge/license-MIT-FFD23F?style=for-the-badge)](LICENSE)
 
@@ -20,7 +21,7 @@
 [![TikTok](https://img.shields.io/badge/TikTok-000000?style=flat-square&logo=tiktok&logoColor=white)](#)
 [![YouTube Shorts](https://img.shields.io/badge/YouTube_Shorts-FF0000?style=flat-square&logo=youtubeshorts&logoColor=white)](#)
 
-**[Install](#-install-in-10-seconds)** · **[The 15 formats](#-the-15-formats)** · **[How it works](#-how-it-works)** · **[Prompts to try](#-prompts-to-try)** · **[FAQ](#-faq)**
+**[Install](#-install-in-10-seconds)** · **[The 15 formats](#-the-15-formats)** · **[The 14 styles](#-the-14-styles)** · **[How it works](#-how-it-works)** · **[Prompts to try](#-prompts-to-try)** · **[FAQ](#-faq)**
 
 </div>
 
@@ -98,6 +99,34 @@ then builds every frame in code, so you can change any word, colour or timing an
 | 15 | Cozy room story | One warm room, objects tell the story | Brand origin, a day in the life |
 
 </details>
+
+---
+
+## 🎨 The 14 styles
+
+A format is the story; a style is the look. **Mix any format with any style**: "Toon POV story × Neon Gulf night",
+"Product hero film × Papercraft", "Tiny world diorama × Claymation". Every style is built in **Blender** or **three.js**.
+
+<div align="center">
+<img src=".github/assets/styles.svg" alt="The 14 AI Reels styles: Gulf heritage, claymation, papercraft, neon Gulf night, keynote product, clay diorama, toon with ink outlines, flat vector 3D, isometric pastel, pixel art, hand-drawn sketch, risograph print, vinyl toy cinematic, kinetic 3D type" width="100%"/>
+</div>
+
+<details>
+<summary><b>🖌 What each style ships with</b></summary>
+
+Palette in hex · materials and shaders · lighting recipe · camera and lenses · motion rules · Arabic and Latin type
+pairing · the Blender recipe and the three.js recipe · best formats · traps to avoid.
+See [`references/styles.md`](skills/ai-reels/references/styles.md).
+
+</details>
+
+---
+
+## 🗣 Arabic voiceover that sounds right
+
+ElevenLabs `eleven_v4` with Arabic settings baked in (language code, text normalization, narration stability,
+stitching between lines), selective tashkeel on words models misread, and a **local Whisper check** that transcribes
+every line back and diffs it against the script, so a mispronounced word is caught before it ships.
 
 ---
 

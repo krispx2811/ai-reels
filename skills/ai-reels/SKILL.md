@@ -1,6 +1,6 @@
 ﻿---
 name: ai-reels
-description: Catalogue of 15 short-form vertical video formats (Reels / TikTok / Shorts): 7 story formats studied from real viral reels and 8 3D showcase formats from the threejs.org gallery (product hero, tiny world diorama, 3D kinetic type, particle globe, satisfying physics, chase cam, glass/liquid, cozy room), with how to build each one locally for free (HyperFrames, three.js, Blender + Kenney CC0 kits, ElevenLabs voice), without AI video models. Use when the user wants a reel, short, TikTok, story ad, POV video, "what if" video, choose-your-path / "comment A or B" video, Roblox-style story, motion comic, or cartoon explainer, or asks "what kinds of videos can you make", or shares an Instagram/TikTok reel as a style reference.
+description: Catalogue of 15 short-form vertical video formats (Reels / TikTok / Shorts) and 14 visual styles (Gulf heritage, claymation, papercraft, neon night, Apple-keynote product, clay diorama, toon outlines, flat vector, isometric, pixel art, sketch, risograph, vinyl toy, kinetic 3D type): 7 story formats studied from real viral reels and 8 3D showcase formats from the threejs.org gallery (product hero, tiny world diorama, 3D kinetic type, particle globe, satisfying physics, chase cam, glass/liquid, cozy room), with how to build each one locally in Blender or three.js for free (HyperFrames, three.js, Blender + Kenney CC0 kits, ElevenLabs voice), without AI video models. Use when the user wants a reel, short, TikTok, story ad, POV video, "what if" video, choose-your-path / "comment A or B" video, Roblox-style story, motion comic, or cartoon explainer, or asks "what kinds of videos can you make", or shares an Instagram/TikTok reel as a style reference.
 ---
 
 # AI Reels
@@ -45,6 +45,40 @@ Full breakdowns (timing, type, colours, overlays, end cards, what to copy and wh
 Details, gallery links, example ideas and three.js recipes (deterministic physics, particles, glass, Arabic 3D
 type) are in `references/threejs-formats.md`.
 
+### Styles (the look), built in Blender or three.js
+
+A format is the structure; a style is the look. Combine them: "format × style".
+
+| # | Style | Looks like | Engine |
+|---|---|---|---|
+| S1 | **Gulf heritage** | Sadu weave, geometric patterns, gold on indigo, lantern light | Blender |
+| S2 | **Claymation stop-motion** | Plasticine, fingerprints, 12 fps stepped motion | Blender |
+| S3 | **Papercraft** | Layered paper cut-outs with real soft shadows | Blender |
+| S4 | **Neon Gulf night** | Neon signs, wet reflective streets, haze | Blender |
+| S5 | **Apple-keynote product** | White/graphite studio, glossy hero object | three.js / Blender |
+| S6 | **Clay miniature diorama** | Toy town, tilt-shift, soft dusk | Blender |
+| S7 | **Toon cel + ink outlines** | Game-engine cartoon, black outlines | Blender / three.js |
+| S8 | **Flat vector 3D** | Flat-shaded, orthographic, one hot colour | three.js |
+| S9 | **Isometric pastel** | Floating isometric rooms, pastel gradients | three.js |
+| S10 | **Pixel art retro** | Low-res render scaled up sharp | three.js |
+| S11 | **Hand-drawn sketch** | Ink lines drawing themselves (Grease Pencil) | Blender |
+| S12 | **Risograph print** | Two-ink grain, halftone, misregistration | three.js / Blender |
+| S13 | **Vinyl toy cinematic** | Toy figures, film light, shallow DOF | Blender |
+| S14 | **Kinetic 3D typography** | Giant 3D words, hard cuts | three.js |
+
+Palettes, materials, light, camera, motion, type and the Blender/three.js recipe for each are in `references/styles.md`.
+
+## Arabic voice (ElevenLabs)
+
+- Use `eleven_v4`, `language_code: "ar"`, `apply_text_normalization: "on"`, narration settings stability 0.7 /
+  similarity 0.5, and `previous_text`/`next_text` stitching. v4 ignores `speed`: pace with punctuation (every «…»
+  adds a pause), and fit lines with ffmpeg `atempo` (max about 1.15).
+- Write numbers as words, add tashkeel only on words the model may misread, put a comma after short words that
+  blend into the next («بَسّ،»), and avoid one-word lines («ليش؟» → «ليش يعني؟»).
+- Always verify: transcribe each line back with Whisper (faster-whisper large-v3-turbo, local) and diff against the
+  script with diacritics stripped. Do not give Whisper a text hint on very short clips (it echoes the hint).
+- Record the voice FIRST, then cut the picture to the real line timings.
+
 ## Before building
 
 - Ask (or infer) only: format, language (Arabic needs browser-shaped text, right-to-left), length (15 to 60 s), voice or no voice, CTA.
@@ -54,7 +88,7 @@ type) are in `references/threejs-formats.md`.
 
 ## Toolkit
 
-Needs Node 22+, Python 3, ffmpeg; Blender 4.2+ and an NVIDIA/AMD GPU are optional (only for Blender formats).
+Needs Node 22+, Python 3, ffmpeg; Blender 4.2+ with a GPU for the Blender styles.
 
 - **HyperFrames** (HTML + GSAP to MP4): `npx --yes hyperframes@0.8.181 render <dir> -o out.mp4 -q draft|high`,
   `... snapshot <dir> --at 0,3,6 --no-end -o stills`. One root `#root[data-composition-id=main][data-duration][data-width=1080][data-height=1920]`,
